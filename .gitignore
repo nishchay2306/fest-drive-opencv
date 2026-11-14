@@ -1,0 +1,3 @@
+.venv/
+.chrome-test/
+__pycache__/

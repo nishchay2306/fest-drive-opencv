@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fest Drive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+  <script src="camera.mjs" type="module"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div><span class="eyebrow">College fest challenge</span><h1>FEST<span>DRIVE</span></h1></div>
+      <button id="fullscreen" class="small-button" type="button">⛶ Fullscreen</button>
+    </header>
+    <div class="layout">
+      <section class="arena" aria-label="Racing game">
+        <canvas id="game" width="960" height="600" aria-label="Road, car, cones and stars"></canvas>
+        <div class="hud" aria-live="polite"><div><small>TIME</small><strong id="time">60</strong></div><div><small>SCORE</small><strong id="score">0</strong></div><div><small>DISTANCE</small><strong id="distance">0 m</strong></div></div>
+        <div class="overlay" id="overlay"><div class="panel" id="panel"></div></div>
+      </section>
+      <aside class="sidebar">
+        <div class="card camera-card"><span class="eyebrow">Webcam steering</span><h2>Your wheel is here.</h2><div class="camera-screen"><video id="camera-video" autoplay muted playsinline hidden></video><canvas id="camera-preview" width="320" height="240" aria-label="Mirrored webcam hand tracking preview"></canvas></div><p id="camera-status" class="camera-status" role="status">Camera off</p><button id="camera-toggle" class="small-button" type="button">Start camera</button><p class="muted tiny">Allow camera access when your browser asks. Your video stays on this computer.</p></div>
+        <div class="card instructions"><span class="eyebrow">How to play</span><h2>Hands on the wheel.</h2><p>Two fists to accelerate. Tilt your hands to steer. Open both hands to brake.</p><p class="muted">Keyboard: ↑ accelerate · ↓ brake · ← → steer</p></div>
+        <div class="card board"><div class="board-head"><div><span class="eyebrow">Local records</span><h2>Leaderboard</h2></div><button id="clear-scores" class="text-button" type="button">Clear scores</button></div><ol id="leaderboard"></ol><p class="muted tiny">Saved on this browser only.</p></div>
+      </aside>
+    </div>
+    <footer>Start camera, allow access, then start a race. Press F for fullscreen.</footer>
+  </main>
+</body>
+</html>
